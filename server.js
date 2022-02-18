@@ -2,6 +2,7 @@ const express = require("express")
 const app = express()
 const expressLayout = require("express-ejs-layouts")
 const indexRoutes = require("./routes/index")
+const authorRoutes = require("./routes/author")
 const mongoose = require("mongoose")
 
 require('dotenv').config()
@@ -20,6 +21,7 @@ app.use(expressLayout)
 app.use(express.static("public"))
 
 app.use("/",indexRoutes)
+app.use("/authors",authorRoutes)
 
 
 
